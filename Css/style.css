@@ -1,6 +1,7 @@
 /* Variables     */
 :root {
   --main-color: #19c8fa;
+  --blue-alt-color: #0d69d5;
   --transparent-color: rgb(15 116 143 / 70%);
   --white-color: #fff;
   --section-padding: 100px;
@@ -121,9 +122,7 @@ body {
   border: 2px solid #333;
   padding: 5px 12px;
   cursor: pointer;
-  border-radius: 5px;
   transition: all 0.3s;
-  display: none;
 }
 #up-btn:hover {
   transform: translateY(-8px);
@@ -134,10 +133,10 @@ body {
 
 /* Start Header */
 header {
-  position: absolute;
+  position: fixed;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 999;
   transition: all 0.3s;
 }
 header .container {
@@ -145,12 +144,30 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 12px;
-  background-color: #ffffff1a;
   border: 1px solid #ffffff20;
   backdrop-filter: blur(16px) saturate(120%);
   margin: 5px auto 0;
+  background: linear-gradient(
+    45deg,
+    var(--transparent-color),
+    var(--main-color),
+    var(--blue-alt-color)
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 5s ease infinite;
 }
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 header .container::after {
   content: "";
   position: absolute;
@@ -224,6 +241,7 @@ header nav ul li a {
   font-size: 14px;
   position: relative;
   z-index: 2;
+  font-weight: bold;
 }
 header nav ul li a.active,
 header nav ul li a:hover,
@@ -256,7 +274,8 @@ header nav .form i {
   top: 50%;
   transform: translateY(-50%);
   padding: 40px 0;
-  transition: 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 /* End Header */
@@ -270,7 +289,6 @@ header nav .form i {
   background-size: cover;
   position: relative;
 }
-
 .landing .overlay {
   position: absolute;
   left: 0;
@@ -279,7 +297,6 @@ header nav .form i {
   height: 100%;
   background-color: rgb(0 0 0 / 60%);
 }
-
 .landing .text {
   color: var(--white-color);
   position: absolute;
@@ -292,23 +309,19 @@ header nav .form i {
   display: flex;
   justify-content: flex-end;
 }
-
 .landing .content {
   max-width: 500px;
 }
-
 .landing .text h2 {
   font-size: 32px;
   margin-bottom: 20px;
   font-weight: normal;
   line-height: 1.5;
 }
-
 .landing .text p {
   font-size: 14px;
   line-height: 2;
 }
-
 .landing .change-background {
   color: #ddd;
   position: absolute;
@@ -320,7 +333,6 @@ header nav .form i {
   width: 100%;
   padding: 0 30px;
 }
-
 .landing .bullets {
   color: var(--white-color);
   position: absolute;
@@ -331,19 +343,16 @@ header nav .form i {
   width: 75px;
   justify-content: space-between;
 }
-
 .landing .bullets li {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 1px solid var(--white-color);
 }
-
 .landing .bullets li.active {
   background-color: var(--main-color);
   border: var(--main-color);
 }
-
 @media (max-width: 768px) {
   .landing .text {
     width: 100%;
@@ -355,37 +364,30 @@ header nav .form i {
     display: none;
   }
 }
-
 /* End Landing */
 
 /* Start services */
-
 .services .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-column-gap: 40px;
   grid-row-gap: 60px;
 }
-
 .services .container .serv {
   display: flex;
   justify-content: space-between;
 }
-
 .services .container .serv .icon {
   margin-right: 50px;
 }
-
 .services .container .serv .serv-box h3 {
   margin-bottom: 30px;
   color: var(--main-color);
 }
-
 .services .container .serv .serv-box p {
   color: #777;
   line-height: 2;
 }
-
 @media (max-width: 768px) {
   .services .container {
     grid-template-columns: 100%;
@@ -401,11 +403,9 @@ header nav .form i {
     margin: 0 0 30px;
   }
 }
-
 /* End services */
 
 /* Start Design */
-
 .design {
   background-image: url(../Files/design-features.jpg);
   background-size: cover;
@@ -415,7 +415,6 @@ header nav .form i {
   position: relative;
   height: 600px;
 }
-
 .design::before {
   content: "";
   width: 100%;
@@ -425,50 +424,42 @@ header nav .form i {
   top: 0;
   left: 0;
 }
-
 .design .image,
 .design .text {
   position: relative;
   z-index: 2;
   flex: 1;
 }
-
 @media (max-width: 768px) {
   .design .image {
     display: none;
   }
 }
-
 .design .image img {
   position: relative;
   bottom: -150px;
   left: 50%;
   transform: translate(-50%);
 }
-
 .design .text {
   color: var(--white-color);
   background-color: var(--transparent-color);
   padding: 50px;
 }
-
 .design .text h2 {
   font-weight: normal;
   margin-bottom: 40px;
   text-transform: uppercase;
 }
-
 .design .text ul li {
   padding: 15px 0;
 }
-
 .design .text ul li::before {
   font-family: "Font Awesome 5 Free";
   content: "\e163";
   font-weight: 900;
   margin-right: 20px;
 }
-
 /* End Design */
 
 /* Start Portfolio */
@@ -480,7 +471,8 @@ header nav .form i {
   padding: 10px;
   cursor: pointer;
 }
-.portfolio .shuffle li.active {
+.portfolio .shuffle li.active,
+.portfolio .shuffle li:hover {
   background-color: var(--main-color);
   color: var(--white-color);
 }
@@ -1022,6 +1014,7 @@ header nav .form i {
 .contact .content {
   display: flex;
   justify-content: space-between;
+  overflow: visible;
 }
 @media (max-width: 768px) {
   .contact .content {
@@ -1131,6 +1124,11 @@ footer P:not(.copyright) {
 footer .socail-icons i {
   margin-bottom: 60px;
   padding: 15px 10px;
+  cursor: pointer;
+}
+footer .socail-icons *:hover {
+  color: var(--main-color);
+  transform: scale(1.2);
 }
 footer .copyright span {
   color: var(--main-color);
