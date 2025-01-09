@@ -18,7 +18,7 @@ let lengthLiShuffle = lis.length;
   for (let i = 0; i < lengthLiShuffle; i++) {
     let li = document.createElement("li");
     li.classList.add(lis[i]);
-    li.appendChild(document.createTextNode(lis[i])); // <li>All</li>
+    li.append(document.createTextNode(lis[i])); // <li>All</li>
     li.onclick = () => {
       activeShuffle(i);
       sortBoxes(lis[i]);
@@ -110,10 +110,8 @@ let boxesCATAGORY = [
     let p = document.createElement("p");
     p.appendChild(document.createTextNode(boxesPARAGRAPH[i]));
 
-    cap.appendChild(h3);
-    cap.appendChild(p);
-    box.appendChild(img);
-    box.appendChild(cap);
+    cap.append(h3, p);
+    box.append(img, cap);
     boxs_Container.appendChild(box);
   }
 }
@@ -129,9 +127,17 @@ function sortBoxes(catagory) {
     for (let box of boxs_Container.children) {
       if (box.classList.contains(catagory)) {
         box.style.display = "block";
-      } else {
-        box.style.display = "none";
-      }
+      } else box.style.display = "none";
     }
   }
+}
+
+// Add More Button Link
+// <a href="#" class="more">more</a>
+{
+  let a = document.createElement("a");
+  a.setAttribute("href", "#");
+  a.classList.add("more");
+  a.append(document.createTextNode("more"));
+  portfolioSec.appendChild(a);
 }
