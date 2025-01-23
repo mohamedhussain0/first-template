@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Files/logo2.png" type="image/x-png">
-    <link rel="stylesheet" href="Css/normalize.css">
-    <link rel="stylesheet" href="Css/all.min.css">
-    <link rel="stylesheet" href="Css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="Files/logo2.png" type="image/x-png" />
+    <link rel="stylesheet" href="Css/normalize.css" />
+    <link rel="stylesheet" href="Css/all.min.css" />
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet"
-      href="chrome-extension://ihcjicgdanjaechkgeegckofjjedodee/app/content-style.css">
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="chrome-extension://ihcjicgdanjaechkgeegckofjjedodee/app/content-style.css"
+    />
     <title>Kasper | Template_Two</title>
   </head>
   <body>
@@ -22,10 +25,12 @@
     <header>
       <div class="container">
         <a href="#" class="logo">
-          <img src="Files/logo.png" alt="Logo">
+          <img src="Files/logo.png" alt="Logo" />
         </a>
         <nav>
-          <i class="fas fa-bars menu"></i>
+          <div class="menu">
+            <i class="fas fa-bars"></i>
+          </div>
           <ul class="links">
             <li>
               <a href="#home" class="active">Home</a>
@@ -59,13 +64,13 @@
     </button>
     <!-- End UP Button -->
     <!-- Start Landing -->
-    <div class="landing">
+    <div class="landing" id="landing">
       <div class="overlay"></div>
       <div class="text">
         <div class="content">
           <h2>
             Hello World!
-            <br>
+            <br />
             We Are Kasper We Make Art.
           </h2>
           <p>
@@ -81,9 +86,7 @@
         <i class="fas fa-angle-right fa-2x"></i>
       </div>
       <ul class="bullets">
-        <li></li>
-        <li class="active"></li>
-        <li></li>
+        <!-- Bullets Here -->
       </ul>
     </div>
     <!-- End Landing -->
@@ -155,7 +158,7 @@
     <!-- Start Design -->
     <div class="design section-padding">
       <div class="image">
-        <img src="Files/mobile.png" alt="Image">
+        <img src="Files/mobile.png" alt="Image" />
       </div>
       <div class="text">
         <h2>Our Design Comes With...</h2>
@@ -179,7 +182,8 @@
           </p>
         </div>
         <ul class="shuffle">
-          <!-- Shuffle --></ul>
+          <!-- Shuffle -->
+        </ul>
       </div>
       <div class="imgs-container">
         <!-- Image Container -->
@@ -190,7 +194,7 @@
     <!-- Start Video Section -->
     <div class="video">
       <video autoplay loop muted>
-        <source src="Files/awesome-video.mp4" type="video/mp4">
+        <source src="Files/awesome-video.mp4" type="video/mp4" />
       </video>
       <div class="text">
         <h2>Super Awesome Video Here</h2>
@@ -208,7 +212,7 @@
           Mauris blandit aliquet elit, eget tincidunt.
         </p>
       </div>
-      <img src="Files/about.png" alt>
+      <img src="Files/about.png" alt />
     </div>
     <!-- End About -->
     <!-- Start Stats -->
@@ -247,7 +251,7 @@
             Mauris blandit aliquet elit, eget tincidunt.
           </p>
           <div class="content">
-            <img src="Files/skills-01.jpg" alt="Skill One">
+            <img src="Files/skills-01.jpg" alt="Skill One" />
             <div class="text">
               Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
               Mauris blandit aliquet elit, eget tincidunt.
@@ -255,7 +259,7 @@
             </div>
           </div>
           <div class="content">
-            <img src="Files/skills-02.jpg" alt="Skill Two">
+            <img src="Files/skills-02.jpg" alt="Skill Two" />
             <div class="text">
               Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
               Mauris blandit aliquet elit, eget tincidunt.
@@ -275,7 +279,7 @@
             Mauris blandit aliquet elit, eget tincidunt.
           </p>
           <div class="prog-holder">
-            <h4>Adobe</h4>
+            <h4>Python</h4>
             <div class="prog">
               <span style="width: 90%" data-progress="90%"></span>
             </div>
@@ -314,7 +318,7 @@
     </div>
     <!-- End Quote -->
     <!-- Start Pricing -->
-    <div class="pricing section-padding">
+    <div class="pricing section-padding" id="pricing">
       <div class="container">
         <div class="main-heading">
           <h2>Pricing</h2>
@@ -403,8 +407,8 @@
       <div class="container">
         <form action>
           <i class="far fa-envelope fa-lg"></i>
-          <input type="email" name="mail" placeholder="Your Email">
-          <input type="submit" value="Subscribe">
+          <input type="email" name="mail" placeholder="Your Email" />
+          <input type="submit" value="Subscribe" />
         </form>
         <p>
           Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
@@ -414,7 +418,7 @@
     </div>
     <!-- End Subscribe -->
     <!-- Start Contact -->
-    <div class="contact section-padding">
+    <div class="contact section-padding" id="contact">
       <div class="container">
         <div class="main-heading">
           <h2>Contact Us</h2>
@@ -429,15 +433,20 @@
               class="main-input"
               type="text"
               name="name"
-              placeholder="Your Name">
+              placeholder="Your Name"
+            />
             <input
               class="main-input"
               type="email"
               name="mail"
-              placeholder="Your Email">
-            <textarea class="main-input" name="massage"
-              placeholder="Your Massage"></textarea>
-            <input type="submit" value="Send Massage">
+              placeholder="Your Email"
+            />
+            <textarea
+              class="main-input"
+              name="massage"
+              placeholder="Your Massage"
+            ></textarea>
+            <input type="submit" value="Send Massage" />
           </form>
           <div class="info">
             <h4>Get In Touch</h4>
@@ -446,11 +455,11 @@
             <h4>Where We Are</h4>
             <address>
               Awesome Address 17
-              <br>
+              <br />
               New York, NYC
-              <br>
+              <br />
               123-4567-890
-              <br>
+              <br />
               USA
             </address>
           </div>
@@ -461,7 +470,7 @@
     <!-- Start Footer -->
     <footer>
       <div class="container">
-        <img src="Files/logo.png" alt="Logo">
+        <img src="Files/logo.png" alt="Logo" />
         <p>We Are Social</p>
         <div class="socail-icons">
           <i class="fab fa-facebook-f"></i>
@@ -478,6 +487,7 @@
     </footer>
     <!-- End Footer -->
     <!-- Custom JS Files -->
+    <script src="js/main.js"></script>
     <script src="js/position.js"></script>
     <script src="js/portfolio.js"></script>
     <script src="js/header.js"></script>

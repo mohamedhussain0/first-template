@@ -36,7 +36,7 @@ body {
 }
 @media (max-width: 768px) {
   :root {
-    --section-padding: 50px;
+    --section-padding: 70px;
   }
 }
 @media (min-width: 768px) {
@@ -112,8 +112,8 @@ body {
 /* UP */
 #up-btn {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 15px;
+  bottom: -40px;
   background-color: var(--main-color);
   z-index: 999;
   color: #eee;
@@ -129,6 +129,7 @@ body {
   background-color: var(--blue-alt-color);
 }
 /* End UP */
+
 /* End Components */
 
 /* Start Header */
@@ -146,7 +147,7 @@ header .container {
   align-items: center;
   border: 1px solid #ffffff20;
   backdrop-filter: blur(16px) saturate(120%);
-  margin: 5px auto 0;
+  margin: 0 auto;
   background: linear-gradient(
     45deg,
     var(--transparent-color),
@@ -189,55 +190,40 @@ header nav {
 header nav .menu {
   font-size: 25px;
   color: var(--white-color);
-  padding: 37px 0;
+  padding: 20px 0;
   display: none;
 }
 header nav .links {
   display: flex;
 }
-
-@media (max-width: 768px) {
-  header .container {
-    margin: 5px 5px 0px;
-  }
-  header nav .links {
-    display: none;
-  }
-  header nav .menu {
-    display: block;
-  }
-  header nav .menu:hover + .links,
-  header nav .links:hover {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    background-color: rgb(0 0 0 / 60%);
-  }
-  header nav .menu:hover + .links li a {
-    padding: 13px 10px;
-  }
-  header nav .links:hover a {
-    padding: 13px 10px;
-    display: block;
-    font-size: 14px;
-    transition: 0.3s;
-    position: relative;
-    z-index: 2;
-  }
-  header nav .links:hover li {
-    transition: all 0.3s;
-  }
-  header nav .links li:hover {
-    padding-left: 15px;
-  }
+header nav .links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0 0 0 / 60%);
 }
+header nav .links.open a {
+  padding: 13px 10px;
+  display: block;
+  font-size: 14px;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+}
+header nav .links.open li {
+  transition: all 0.3s;
+}
+header nav .links.open li:hover {
+  padding-left: 15px;
+}
+
 header nav ul li a {
   color: var(--white-color);
   display: block;
-  padding: 40px 10px;
+  padding: 25px 10px;
   font-size: 14px;
   position: relative;
   z-index: 2;
@@ -247,17 +233,10 @@ header nav ul li a.active,
 header nav ul li a:hover,
 header nav .form i:hover {
   color: var(--main-color);
+}
+header nav ul li:not(:last-of-type) {
   border-bottom: 1px solid var(--main-color);
 }
-
-header nav li a {
-  transition: all 0.3s;
-}
-
-header nav .links li:hover a {
-  transform: translateY(-13px);
-}
-
 header nav .form {
   width: 40px;
   height: 30px;
@@ -265,7 +244,6 @@ header nav .form {
   margin-left: 30px;
   border-left: 1px solid var(--white-color);
 }
-
 header nav .form i {
   color: var(--white-color);
   position: absolute;
@@ -278,16 +256,24 @@ header nav .form i {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  header nav .links {
+    display: none;
+  }
+  header nav .menu {
+    display: block;
+  }
+}
 /* End Header */
 
 /* Start Landing */
 
 .landing {
   min-height: 100vh;
-  background-color: #1f2021;
-  background-image: url(../Files/landing.jpg);
   background-size: cover;
+  background-position: right;
   position: relative;
+  background-image: url(../Files/landing-1.jpg);
 }
 .landing .overlay {
   position: absolute;
@@ -348,6 +334,7 @@ header nav .form i {
   height: 20px;
   border-radius: 50%;
   border: 1px solid var(--white-color);
+  cursor: pointer;
 }
 .landing .bullets li.active {
   background-color: var(--main-color);
@@ -753,6 +740,7 @@ header nav .form i {
   text-transform: uppercase;
   font-weight: normal;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .our-skills .skills .prog-holder .prog {
@@ -775,10 +763,11 @@ header nav .form i {
   color: var(--white-color);
   padding: 4px 0;
   right: -20px;
-  top: -40px;
+  top: -37px;
   text-align: center;
   width: 40px;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .our-skills .skills .prog-holder .prog span:after {
@@ -827,39 +816,32 @@ header nav .form i {
 /* End Quote */
 
 /* Start Pricing */
-
 .pricing .container {
   text-align: center;
 }
-
 .pricing .container .plans {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
 }
-
 .pricing .container .plans .plan {
   background-color: #fcfcfc;
 }
-
 .pricing .container .plans .plan .head {
   padding: 40px 20px;
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
 }
-
 .pricing .container .plans .plan .head h3 {
   font-weight: normal;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-
 .pricing .container .plans .plan .head span {
   font-size: 60px;
   font-weight: bold;
   position: relative;
 }
-
 .pricing .container .plans .plan .head span::before {
   content: "$";
   font-size: 25px;
@@ -867,7 +849,6 @@ header nav .form i {
   left: -20px;
   font-weight: normal;
 }
-
 .pricing .container .plans .plan .head span::after {
   content: "/Mo";
   position: absolute;
@@ -875,12 +856,10 @@ header nav .form i {
   bottom: 0;
   margin-left: 10px;
 }
-
 .pricing .container .plans .plan ul li {
   padding: 20px 0;
   position: relative;
 }
-
 .pricing .container .plans .plan ul li::after {
   content: "";
   width: 140px;
@@ -891,7 +870,6 @@ header nav .form i {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .pricing .container .plans .plan .foot a {
   display: block;
   margin: 30px auto;
@@ -900,20 +878,17 @@ header nav .form i {
   padding: 20px;
   color: #000;
 }
-
 .pricing .container .plans .plan .foot a:hover {
   transform: scale(1.1);
   background-color: var(--main-color);
   color: var(--white-color);
   font-weight: bold;
 }
-
 .pricing .container p.contact-text {
   text-align: center;
   margin: 50px auto 20px;
   font-size: 20px;
 }
-
 .pricing .container a.contact-link {
   background-color: var(--main-color);
   color: var(--white-color);
@@ -923,25 +898,21 @@ header nav .form i {
   padding: 15px 20px;
   text-transform: uppercase;
 }
-
 .pricing .container a.contact-link:hover {
   transform: scale(1.1);
   background-color: var(--white-color);
   border: 1px solid var(--main-color);
   color: #000;
 }
-
 /* End Pricing */
 
 /* Start Subsctibe */
-
 .subscribe {
   position: relative;
   background: url(../Files/subscribe.jpg);
   background-size: cover;
   color: var(--white-color);
 }
-
 .subscribe::before {
   content: "";
   width: 100%;
@@ -951,33 +922,28 @@ header nav .form i {
   top: 0;
   left: 0;
 }
-
 .subscribe .container {
   position: relative;
   display: flex;
   align-items: center;
 }
-
 @media (max-width: 991px) {
   .subscribe .container {
     flex-direction: column;
   }
 }
-
 .subscribe form {
   position: relative;
   display: flex;
   width: 500px;
   max-width: 100%;
 }
-
 .subscribe form i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 25px;
 }
-
 .subscribe form input[type="email"] {
   border: 1px solid var(--white-color);
   background: none;
@@ -987,7 +953,6 @@ header nav .form i {
   width: calc(100% - 130px);
   color: var(--white-color);
 }
-
 .subscribe form input[type="submit"] {
   background-color: var(--main-color);
   border: 1px solid var(--white-color);
@@ -997,6 +962,7 @@ header nav .form i {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 .subscribe p {
   line-height: 2;

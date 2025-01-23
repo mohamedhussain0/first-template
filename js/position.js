@@ -2,8 +2,8 @@ let header = document.getElementsByTagName("header")[0];
 let UPbtn = document.getElementById("up-btn");
 
 window.onscroll = () => {
-  if (scrollY >= 900) UPbtn.style.display = "block";
-  else UPbtn.style.display = "none";
+  if (scrollY >= 900) UPbtn.style.bottom = "15px"
+  else UPbtn.style.bottom = "-40px"
 };
 
 // up onclick button
